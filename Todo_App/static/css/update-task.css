@@ -1,0 +1,22 @@
+body {
+  background-color: #eff5f5;
+}
+
+form {
+  color: #497174;
+  width: 500px;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+.btn {
+  color: #d6e4e5;
+  margin-top: 25px;
+  background-color: #497174;
+}
+
+.btn:hover {
+  color: #62b6b7;
+}

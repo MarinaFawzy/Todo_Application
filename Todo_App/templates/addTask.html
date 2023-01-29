@@ -1,0 +1,47 @@
+{% extends 'home-base.html'%}
+{% block title %}ToDo{% endblock %}
+
+{% block style %}
+
+<link rel="stylesheet" href="../static/css/shared.css">
+<link rel="stylesheet" href="../static/css/add-task.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+{% endblock %}
+
+{% block content %}
+<div class="bg-image card shadow-1-strong">
+    <div class="global-container">
+        <div class="card login-form">
+            <div class="card-body">
+                <h1 class="card-title text-center">Add a Task</h1>
+                <div class="card-text">
+                    <form method="post" enctype="multipart/form-data">
+                        {% with messages = get_flashed_messages() %} {% if messages %}
+                            <ul class="flashes">
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %} {% endwith %}
+                        <div class="form-group">
+                            <label for="exampleInputTask">Title</label>
+                            <input type="text" required="required" class="form-control form-control-sm" id="exampleInputTask" name="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputDescription">Description</label>
+                            <textarea type="text" class="form-control" required="required" id="exampleInputDescription" name="description" maxlength="50"
+                                style="height:30vh ;"></textarea>
+                        </div>
+                        <input type="file" id="file" name="file">
+                        <label for="file">Upload Image</label>
+                        <p class="opt">*(Maximum Size: 3MB)</p>
+                        <input type="submit" value="Add">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

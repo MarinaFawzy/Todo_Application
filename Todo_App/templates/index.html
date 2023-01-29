@@ -1,0 +1,27 @@
+{% extends 'index-base.html' %}
+
+{% block title %}ToDo{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/shared.css">
+<link rel="stylesheet" href="../static/css/index.css">
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    <div class="text-box">
+        <div class="static-text">
+            ToDo Website
+        </div>
+        <ul class="dynamic-text">
+            <li><span>Do</span></li>
+            <li><span>It</span></li>
+            <li><span>Easily</span></li>
+        </ul>
+    </div>
+    <div class="img-box">
+        <img src="../static/images/logo-img.png" alt="ToDo Logo" class="Todo">
+    </div>
+</div>
+{% endblock %}

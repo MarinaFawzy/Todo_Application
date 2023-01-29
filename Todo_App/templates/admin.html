@@ -1,0 +1,41 @@
+{% extends 'admin-base.html' %} {% block title %}ToDo{% endblock %} {% block
+style %}
+
+<link rel="stylesheet" href="../static/css/shared.css" />
+<link rel="stylesheet" href="../static/css/admin.css" />
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="content">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <!-- <th scope="col">Task_id</th> -->
+          <th scope="col">User ID</th>
+          <th scope="col">Email</th>
+          <th scope="col">Name</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in user %}
+        <tr>
+          <td>{{row.User_id}}</td>
+          <td>{{row.Email}}</td>
+          <td>{{row.Username}}</td>
+          <td>
+            <a href="{{url_for('deleteUser',id = row.User_id)}}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="download">
+      <a
+        href="{{url_for('download', file_path = 'files/Safe/test.txt')}}"
+        class="download"
+        >Download</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

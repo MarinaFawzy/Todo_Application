@@ -1,0 +1,51 @@
+{% extends 'index-base.html' %} {% block title %}ToDo{% endblock %} {% block
+style %}
+<link rel="stylesheet" href="../static/css/shared.css" />
+<link rel="stylesheet" href="../static/css/login.css" />
+{% endblock %} {% block body %} {% endblock %} {% block anchor %}
+<a href="{{url_for('index')}}">
+  <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo" />
+</a>
+{% endblock %} {% block content %}
+
+<div class="content">
+  <img src="../static/images/logo-img.png" alt="ToDo Logo" />
+
+  <form method="POST">
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input
+        type="text"
+        required="required"
+        class="form-control"
+        name="email"
+        placeholder="Enter your E-mail"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your username with anyone else.
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        required="required"
+        class="form-control"
+        placeholder="Enter your Password"
+        name="password"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <button type="submit" class="btn btn-dark">Login</button>
+  </form>
+</div>
+{% endblock %}

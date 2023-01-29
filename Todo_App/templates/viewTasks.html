@@ -1,0 +1,54 @@
+{% extends 'home-base.html' %} {% block title %}view Tasks{% endblock %} {%
+block style %}
+<link rel="stylesheet" href="../static/css/shared.css" />
+<link rel="stylesheet" href="../static/css/view-tasks.css" />
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="content">
+    <form method="post">
+      <div class="subcontent">
+        <input
+          type="text"
+          required="required"
+          class="form-control"
+          name="search"
+          placeholder="Task Name..."
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <button type="submit" class="btn btn-dark">Search</button>
+      </div>
+    </form>
+    {% if tasks %}
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <!-- <th scope="col">Task_id</th> -->
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in tasks %}
+        <tr>
+          <!-- <td>{{row.Task_id}}</td> -->
+          <td>
+            <a href="{{url_for('updateTask',id = row.Task_id)}}"
+              >{{row.Title}}</a
+            >
+          </td>
+          <td>{{row.Describtion}}</td>
+          <td>{{row.status}}</td>
+          <td>
+            <a href="{{url_for('deleteTask',id = row.Task_id)}}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

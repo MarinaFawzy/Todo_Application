@@ -1,0 +1,41 @@
+{% extends 'index-base.html' %} {% block title %}ToDo{% endblock %} {% block
+style %}
+<link rel="stylesheet" href="../static/css/shared.css" />
+<link rel="stylesheet" href="../static/css/sign-up.css" />
+{% endblock %} {% block anchor %}
+<a href="{{url_for('index')}}">
+  <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo" />
+</a>
+{% endblock %} {% block content %}
+<div class="contents">
+  <div class="center">
+    <form method="POST">
+      <img src="../static/images/logo-img.png" alt="" class="logo" />
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
+      <label for="basic-url" class="form-label" style="display: block"
+        >OTP</label
+      >
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">#</span>
+        <input
+          type="text"
+          name="otp"
+          required="required"
+          class="form-control"
+          placeholder="* * * * * *"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

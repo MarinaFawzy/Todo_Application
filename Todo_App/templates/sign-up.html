@@ -1,0 +1,85 @@
+{% extends 'index-base.html' %} {% block title %}ToDo{% endblock %} {% block
+style %}
+<link rel="stylesheet" href="../static/css/shared.css" />
+<link rel="stylesheet" href="../static/css/sign-up.css" />
+{% endblock %} {% block anchor %}
+<a href="{{url_for('index')}}">
+  <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo" />
+</a>
+{% endblock %} {% block content %}
+<div class="contents">
+  <div class="center">
+    <form method="POST">
+      <img src="../static/images/logo-img.png" alt="" class="logo" />
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
+      <label for="basic-url" class="form-label" style="display: block"
+        >Username</label
+      >
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input
+          type="text"
+          name="username"
+          required="required"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          minlength="5"
+        />
+      </div>
+
+      <label for="basic-url" class="form-label">Password</label>
+      <div class="input-group mb-4">
+        <input
+          type="password"
+          name="password"
+          required="required"
+          class="form-control"
+          placeholder="Password"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          minlength="8"
+          maxlength="20"
+        />
+      </div>
+
+      <label for="basic-url" class="form-label">E-mail</label>
+      <div class="input-group mb-5">
+        <span class="input-group-text" id="basic-addon3">example@iti.com</span>
+        <input
+          type="email"
+          name="email"
+          required="required"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+          placeholder="Email"
+        />
+      </div>
+
+      <label for="basic-url" class="form-label">Phone Number</label>
+      <div class="input-group mb-5">
+        <span class="input-group-text" id="basic-addon3">+2</span>
+        <input
+          placeholder="Phone Number"
+          class="number"
+          type="text"
+          name="phoneNumber"
+          required="required"
+          class="form-control"
+          id="basic-url"
+          aria-describedby="basic-addon3"
+        />
+      </div>
+      <button type="submit" class="btn btn-dark">Register</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

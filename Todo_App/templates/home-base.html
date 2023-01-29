@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Icon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../static/images/checklist.png"
+    />
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    {% block style %}{% endblock %}
+  </head>
+
+  <body>
+    <nav>
+      <a href="{{url_for('home')}}">
+        <img
+          src="../static/images/checklist.png"
+          alt="ToDo Logo"
+          class="logo"
+        />
+      </a>
+      <ul>
+        <li><a href="{{url_for('secreteNote')}}">Buy Me a Coffee</a></li>
+        <li><a href="{{url_for('addTask')}}"> Add Task </a></li>
+        <li><a href="{{url_for('viewTasks')}}"> View Tasks </a></li>
+        <li><a href="{{url_for('logout')}}"> Logout </a></li>
+      </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+      &copy; Secured By <span>CTRL + Z</span> Cyber Security 2022
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

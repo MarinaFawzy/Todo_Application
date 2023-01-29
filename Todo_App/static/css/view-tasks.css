@@ -1,0 +1,44 @@
+body {
+  background-color: #d6e4e5;
+}
+
+table {
+  background-color: #eff5f5;
+  color: #497174;
+  border-radius: 10px;
+}
+
+tr {
+  color: #497174;
+}
+
+th,
+a {
+  color: #497174;
+}
+
+a:hover {
+  color: #62b6b7;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.subcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.form-control {
+  width: 500px;
+}

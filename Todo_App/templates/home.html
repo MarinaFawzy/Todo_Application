@@ -1,0 +1,17 @@
+{% extends 'home-base.html'%} {% block title %}ToDo{% endblock %} {% block style
+%}
+<link rel="stylesheet" href="../static/css/shared.css" />
+<link rel="stylesheet" href="../static/css/home.css" />
+{% endblock %} {% block content %}
+<div class="content">
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul class="flashes">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+  <h1>Welcome back, {{g.user.Username}}!</h1>
+  <img src="../static/images/logo-img.png" alt="" />
+</div>
+{% endblock %}

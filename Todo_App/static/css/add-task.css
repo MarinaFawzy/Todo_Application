@@ -1,0 +1,97 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.global-container {
+  height: 100vh;
+  background-color: #eff5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #497174;
+}
+
+form {
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.login-form {
+  width: 380px;
+  height: 570px;
+  margin: 20px;
+  background: #d6e4e5;
+  border-radius: 10px !important;
+}
+
+input[type="text"],
+textarea[type="text"] {
+  background: #e5ebeb;
+  border: 2px solid white;
+  color: #497174;
+  resize: none;
+}
+
+input[type="text"]:focus,
+textarea[type="text"]:focus {
+  outline: none;
+  border: none;
+  background: white;
+  color: #497174;
+}
+
+.card-title {
+  font-weight: 900px;
+  padding-top: 20px;
+}
+
+#file {
+  display: none;
+}
+
+label[for="file"] {
+  color: white;
+  height: 30px;
+  width: 120px;
+  background-color: #497174;
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+label[for="file"]:hover {
+  background-color: #8bb7bb;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  font-size: 16px;
+  transform: translateY(10px);
+  border-radius: 10px !important;
+  color: #d6e4e5;
+  background-color: #497174;
+  width: 100%;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  background-color: #8bb7bb;
+}
+
+.signup {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.bg-image {
+  margin-top: -3px;
+  height: 100vh;
+}
+
+.opt {
+  margin-bottom: 0;
+  opacity: 0.7;
+}

@@ -1,0 +1,18 @@
+.content button {
+  background-color: #62b6b7;
+  color: #497174;
+}
+
+.mb-3,
+.mb-4 {
+  color: #497174;
+}
+
+.flashes {
+  background-color: #eff5f5;
+  padding: 8px;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #497174;
+  list-style: none;
+}
